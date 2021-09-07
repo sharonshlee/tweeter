@@ -1,15 +1,14 @@
-.new-tweet label {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
-}
-
 .new-tweet textarea {
   border: none;
   background: none;
   border-bottom: solid;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  height: 2em;
   font-size: 0.8em;
+}
+
+.new-tweet textarea::placeholder {
+  font-weight: 600;
 }
 
 .new-tweet button {
