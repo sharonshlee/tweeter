@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -64,6 +65,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- New Tweet Input -->
       <section class="new-tweet">
         <form action="/tweets" method="POST">
           <!-- <label for="tweet-text">What are you humming about?</label> -->
@@ -77,6 +79,28 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+
+      <!-- Tweets -->
+      <section class="tweets">
+        <article class="tweet">
+          <header>
+            <div class="image-name">
+              <span>image </span>
+              <span>sharon</span>
+            </div>
+            <span class="lastname">@lee</span>
+          </header>
+          <main>THis is main.</main>
+          <footer>
+            <span>10 days ago</span>
+            <div class="icons">
+              <span>Flag</span>
+              <span>Share</span>
+              <span>Love</span>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
