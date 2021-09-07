@@ -7,6 +7,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.tweet-shadow {
+  box-shadow: 7px 7px 2px #b2bfe7;
+}
 /* ------------------------------------- */
 /* TWEET HEADER */
 .tweet header {
@@ -70,5 +74,9 @@
 
 .tweet footer span {
   padding: 0 0.5em;
+}
+
+.icons-flag {
+  color: #d1a30a;
 }
 /* END FOOTER */
