@@ -7,6 +7,9 @@ nav {
   justify-content: space-between;
   align-items: flex-end;
   padding: 1em;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  /* overflow: hidden; */
 }
 nav span {
   font-family: "Bungee", sans-serif;
