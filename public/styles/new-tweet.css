@@ -15,7 +15,8 @@
 .new-tweet button {
   background-color: #4056a1;
   color: white;
-  border: none;
+  border: solid 1px #4056a1;
+  border-radius: 3px;
 }
 
 .new-tweet button,

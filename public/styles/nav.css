@@ -28,3 +28,7 @@ nav .new-tweet {
 nav .new-icon {
   color: red;
 }
+
+.hover-cursor {
+  cursor: pointer;
+}
