@@ -18,17 +18,27 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
   flex-grow: 1;
 }
 
-.tweet header .image-name {
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet header img {
+  padding-right: 15px;
+}
+
+.image-name {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .lastname {
   color: #ccc;
+  font-weight: bold;
 }
 /* END HEADER */
 
@@ -52,5 +62,13 @@
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
+}
+
+.tweet footer .icons {
+  color: #4056a1;
+}
+
+.tweet footer span {
+  padding: 0 0.5em;
 }
 /* END FOOTER */
