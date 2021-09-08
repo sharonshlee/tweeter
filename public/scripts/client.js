@@ -3,6 +3,14 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+//prevent XXS attack, cross-site scripting with escape
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = function (tweet) {
   const timeAgo = timeago.format(tweet.created_at);
   const tweetArticle = $(`
@@ -14,8 +22,8 @@ const createTweetElement = function (tweet) {
           </div>
           <div class="lastname">${tweet.user.handle}</div>
         </header>
-
-        <main>${tweet.content.text}</main>
+      
+        <main>${escape(tweet.content.text)}</main>
 
         <footer>
           <span>${timeAgo}</span>
@@ -50,7 +58,7 @@ const loadTweets = function () {
 
 const postTweet = function (newTweet) {
   $.post("/tweets", newTweet, function () {
-    loadTweets();
+    loadTweets(); //refetch tweets on submission
   });
 };
 
@@ -74,11 +82,13 @@ $(document).ready(function () {
 
   $("#frm-new-tweet").submit(function (event) {
     // prevent the default behaviour of the submit event (data submission and page refresh)
+    //Single page application
     event.preventDefault();
 
     if (formValidation()) {
       //Serialize the form data before posting to the server, key=value pair
       const newTweet = $(this).serialize();
+
       //AJAX POST request that sends the form data to the server.
       postTweet(newTweet);
       //clear and focus the textareax
