@@ -1,4 +1,5 @@
-.new-tweet textarea {
+.new-tweet textarea,
+textarea:focus {
   border: none;
   background: none;
   border-bottom: solid;
@@ -6,6 +7,7 @@
   height: 2em;
   font-size: 0.8em;
   margin-top: 2em;
+  outline: none;
 }
 
 .new-tweet textarea::placeholder {

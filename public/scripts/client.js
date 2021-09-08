@@ -62,10 +62,26 @@ $(document).ready(function () {
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
       const tweetArticle = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
+      // takes return tweet article and appends it to the tweets section
       $(".tweets").append(tweetArticle);
     }
   };
 
   renderTweets(data);
-});
+
+  $("#frm-new-tweet").submit(function (event) {
+    // prevent the default behaviour of the submit event (data submission and page refresh)
+    event.preventDefault();
+
+    //get form data from user input
+    const newTweet = $("#tweet-text").querySelector();
+
+    // create an AJAX POST request in client.js that sends the form data to the server.
+    console.log("perfom ajax call");
+    $.ajax("index.html", { method: "POST" }).then(function (newTweet) {
+      console.log("Success");
+      //append form data, new tweet to the main section
+      $(".tweets").append(newTweet);
+    });
+  });
+}); //close ready
