@@ -54,6 +54,21 @@ const postTweet = function (newTweet) {
   });
 };
 
+const formValidation = function () {
+  const tweetContentCount = $(".counter").val();
+  if (tweetContentCount < 0) {
+    alert("Tweet content cannot be over 140 characters.");
+    return false;
+  }
+  //empty tweet
+  if (!$("#tweet-text").val()) {
+    alert("Tweet content cannot be empty.");
+    return false;
+  }
+
+  return true;
+};
+
 $(document).ready(function () {
   loadTweets();
 
@@ -61,13 +76,13 @@ $(document).ready(function () {
     // prevent the default behaviour of the submit event (data submission and page refresh)
     event.preventDefault();
 
-    //Serialize the form data before posting to the server, key=value pair
-    const newTweet = $(this).serialize();
-
-    //AJAX POST request that sends the form data to the server.
-    postTweet(newTweet);
-
-    //clear textarea after post and focus the textarea for new input
-    $("#tweet-text").val("").focus();
+    if (formValidation()) {
+      //Serialize the form data before posting to the server, key=value pair
+      const newTweet = $(this).serialize();
+      //AJAX POST request that sends the form data to the server.
+      postTweet(newTweet);
+      //clear and focus the textareax
+      $("#tweet-text").val("").focus();
+    }
   });
 }); //close ready
