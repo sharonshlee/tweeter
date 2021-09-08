@@ -3,36 +3,36 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function () {
-  // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants",
-      },
-      created_at: 1461116232227,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense , donc je suis",
-      },
-      created_at: 1461113959088,
-    },
-  ];
 
-  const createTweetElement = function (tweet) {
-    let timeAgo = timeago.format(tweet.created_at);
-    let tweetArticle = $(`
+// Fake data taken from initial-tweets.json
+const data = [
+  {
+    user: {
+      name: "Newton",
+      avatars: "https://i.imgur.com/73hZDYK.png",
+      handle: "@SirIsaac",
+    },
+    content: {
+      text: "If I have seen further it is by standing on the shoulders of giants",
+    },
+    created_at: 1461116232227,
+  },
+  {
+    user: {
+      name: "Descartes",
+      avatars: "https://i.imgur.com/nlhLi3I.png",
+      handle: "@rd",
+    },
+    content: {
+      text: "Je pense , donc je suis",
+    },
+    created_at: 1461113959088,
+  },
+];
+
+const createTweetElement = function (tweet) {
+  let timeAgo = timeago.format(tweet.created_at);
+  let tweetArticle = $(`
         <article class="tweet">
         <header>
           <div class="image-name">
@@ -55,33 +55,37 @@ $(document).ready(function () {
         </article>
     `);
 
-    return tweetArticle;
-  };
+  return tweetArticle;
+};
 
-  const renderTweets = function (tweets) {
-    for (const tweet of tweets) {
-      // calls createTweetElement for each tweet
-      const tweetArticle = createTweetElement(tweet);
-      // takes return tweet article and appends it to the tweets section
-      $(".tweets").append(tweetArticle);
-    }
-  };
+const renderTweets = function (tweets) {
+  for (const tweet of tweets) {
+    // calls createTweetElement for each tweet
+    const tweetArticle = createTweetElement(tweet);
+    // takes return tweet article and prepend it to the tweets section
+    $(".tweets").prepend(tweetArticle);
+  }
+};
 
-  renderTweets(data);
+renderTweets(data);
 
+const loadTweet = function (newTweet) {
+  $.post("/tweets", newTweet, function () {
+    $.get("/tweets", function (data) {
+      renderTweets(data);
+    });
+  });
+};
+
+$(document).ready(function () {
+  // create an AJAX POST request in client.js that sends the form data to the server.
   $("#frm-new-tweet").submit(function (event) {
     // prevent the default behaviour of the submit event (data submission and page refresh)
     event.preventDefault();
 
-    //get form data from user input
-    const newTweet = $("#tweet-text").querySelector();
+    //Serialize the form data before posting to the server
+    const newTweet = $(this).serialize();
 
-    // create an AJAX POST request in client.js that sends the form data to the server.
-    console.log("perfom ajax call");
-    $.ajax("index.html", { method: "POST" }).then(function (newTweet) {
-      console.log("Success");
-      //append form data, new tweet to the main section
-      $(".tweets").append(newTweet);
-    });
+    loadTweet(newTweet);
   });
 }); //close ready

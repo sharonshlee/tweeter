@@ -66,16 +66,14 @@
     <main class="container">
       <!-- New Tweet Input -->
       <section class="new-tweet">
-        <form action="/tweets" method="POST">
+        <form id="frm-new-tweet" action="/tweets">
           <textarea
             name="text"
             id="tweet-text"
             placeholder="What are you humming about?"
           ></textarea>
           <div class="tweet-button">
-            <button type="submit" id="submitBtn" class="hover-cursor">
-              Tweet
-            </button>
+            <button type="submit" class="hover-cursor">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
@@ -83,7 +81,7 @@
 
       <!-- Tweets -->
       <section class="tweets">
-        <!-- load article of tweet -->
+        <!-- load tweet article -->
       </section>
     </main>
 
@@ -93,5 +91,6 @@
       tyep="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+    <script tyep="text/javascript" src="/scripts/new-icon-click.js"></script>
   </body>
 </html>
