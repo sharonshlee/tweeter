@@ -50,7 +50,7 @@
     <nav>
       <span>tweeter</span>
       <div>
-        <span class="new-tweet"><b>Write</b> a new tweet</span>
+        <span class="new-tweet-label"><b>Write</b> a new tweet</span>
         <span class="fas fa-angle-double-down new-icon hover-cursor"></span>
       </div>
     </nav>
@@ -65,12 +65,12 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <!-- New Tweet Input -->
-      <div class="error-message">
-        <span class="fas fa-exclamation-triangle">
-          <span class="message"></span>
-        <span class="fas fa-exclamation-triangle">
-      </div>
       <section class="new-tweet">
+        <div class="error-message">
+          <span class="fas fa-exclamation-triangle">
+            <span class="message"></span>
+          <span class="fas fa-exclamation-triangle">
+        </div>
         <form id="frm-new-tweet" action="/tweets">
           <textarea
             name="text"

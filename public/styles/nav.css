@@ -22,11 +22,30 @@ nav div {
   flex-direction: column;
   align-items: center;
 }
-nav .new-tweet {
+nav .new-tweet-label {
   font-family: "Source Sans Pro", sans-serif;
 }
 nav .new-icon {
   color: red;
+  /* 
+  Reference: https://css-tricks.com/making-css-animations-feel-natural/
+  */
+  animation-name: new-icon-bounce;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+@keyframes new-icon-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .hover-cursor {

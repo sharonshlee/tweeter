@@ -64,7 +64,7 @@ const postTweet = function (newTweet) {
 
 const setErrorMessage = function (message) {
   $(".error-message").slideDown("slow");
-  $(".message").replaceWith(message);
+  $(".message").text(message);
 };
 
 const formValidation = function () {
@@ -93,7 +93,7 @@ $(document).ready(function () {
   loadTweets();
 
   $("#frm-new-tweet").submit(function (event) {
-    // prevent the default behaviour of the submit event (data submission and page refresh)
+    //prevent the default behaviour of the submit event (data submission and page refresh)
     //Single page application
     event.preventDefault();
 
