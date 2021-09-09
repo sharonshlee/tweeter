@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Disable viewport zooming for mobile browsers -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -47,15 +49,16 @@
 
   <body>
 
-    <header>
-      <!-- Top nav bar (fixed) -->
-      <nav>
-        <span>tweeter</span>
-        <div class="new-tweet-icon">
-          <span class="new-tweet-label"><b>Write</b> a new tweet</span>
-          <span class="fas fa-angle-double-down new-icon hover-cursor"></span>
-        </div>
-      </nav>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <span>tweeter</span>
+      <div class="new-tweet-icon">
+        <span class="new-tweet-label"><b>Write</b> a new tweet</span>
+        <span class="fas fa-angle-double-down new-icon hover-cursor"></span>
+      </div>
+    </nav>
+
+    <header class="body-header">
       <div>
         <img id="profile" src="/images/profile-hex.png" />
       </div>
@@ -88,11 +91,11 @@
       <section class="tweets">
         <!-- load tweet article -->
       </section>
+      <div class="back-top">
+        <span class="fas fa-angle-double-up hover-cursor"></span>
+      </div>
     </main>
 
-    <footer class="back-top">
-      <span class="fas fa-angle-double-up hover-cursor"></span>
-    </footer>
     
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>

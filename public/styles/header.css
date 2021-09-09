@@ -16,3 +16,23 @@ header div {
 #profile {
   padding-top: 120px;
 }
+
+/* Tablet Styles */
+@media only screen and (min-width: 1024px) {
+  .body-header {
+    justify-content: space-between;
+    flex-shrink: 2;
+    margin-left: 1.5em;
+    top: 120px;
+    position: relative;
+    margin-top: 2.5em;
+    height: 10em;
+    margin-right: 1em;
+  }
+
+  #profile {
+    padding-top: 0.5em;
+  }
+  header div {
+  }
+}
