@@ -1,5 +1,4 @@
 header {
-  height: 400px;
   width: 100%;
   font-size: 1.5em;
   color: white;
@@ -12,4 +11,8 @@ header {
 }
 header div {
   margin-bottom: 0.5em;
+}
+
+header img {
+  padding-top: 120px;
 }

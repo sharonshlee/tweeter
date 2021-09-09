@@ -46,16 +46,16 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div>
-        <span class="new-tweet-label"><b>Write</b> a new tweet</span>
-        <span class="fas fa-angle-double-down new-icon hover-cursor"></span>
-      </div>
-    </nav>
 
     <header>
+      <!-- Top nav bar (fixed) -->
+      <nav>
+        <span>tweeter</span>
+        <div class="new-tweet-icon">
+          <span class="new-tweet-label"><b>Write</b> a new tweet</span>
+          <span class="fas fa-angle-double-down new-icon hover-cursor"></span>
+        </div>
+      </nav>
       <div>
         <img src="/images/profile-hex.png" />
       </div>
@@ -90,12 +90,16 @@
       </section>
     </main>
 
+    <footer class="back-top">
+      <span class="fas fa-angle-double-up hover-cursor"></span>
+    </footer>
+    
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script
-      tyep="text/javascript"
+      type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
-    <script tyep="text/javascript" src="/scripts/new-icon-click.js"></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
   </body>
 </html>

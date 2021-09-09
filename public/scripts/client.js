@@ -63,6 +63,10 @@ const postTweet = function (newTweet) {
 };
 
 const setErrorMessage = function (message) {
+  if (!message) {
+    $(".error-message").hide();
+    return;
+  }
   $(".error-message").slideDown("slow");
   $(".message").text(message);
 };
@@ -78,7 +82,7 @@ const formValidation = function () {
     setErrorMessage("Tweet content cannot be empty.");
     return false;
   }
-
+  setErrorMessage("");
   return true;
 };
 

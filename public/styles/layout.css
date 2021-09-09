@@ -21,7 +21,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
-  margin-top: 120px; /* Add a top margin to avoid content overlay */
+  /* padding-top: 120px; Add a top margin to avoid content overlay */
 }
 
 /*

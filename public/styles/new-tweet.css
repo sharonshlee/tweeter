@@ -20,6 +20,11 @@ textarea:focus {
   color: red;
 }
 
+.message {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: normal;
+}
+
 .new-tweet textarea::placeholder {
   font-weight: 600;
 }
