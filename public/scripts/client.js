@@ -62,19 +62,31 @@ const postTweet = function (newTweet) {
   });
 };
 
+const setErrorMessage = function (message) {
+  $(".error-message").slideDown("slow");
+  $(".message").replaceWith(message);
+};
+
 const formValidation = function () {
   const tweetContentCount = $(".counter").val();
   if (tweetContentCount < 0) {
-    alert("Tweet content cannot be over 140 characters.");
+    setErrorMessage("Tweet content cannot be over 140 characters.");
     return false;
   }
   //empty tweet
   if (!$("#tweet-text").val()) {
-    alert("Tweet content cannot be empty.");
+    setErrorMessage("Tweet content cannot be empty.");
     return false;
   }
 
   return true;
+};
+
+const reset = function () {
+  //clear and focus the textarea
+  $("#tweet-text").val("").focus();
+  //reset the counter
+  $(".counter").val("140");
 };
 
 $(document).ready(function () {
@@ -91,8 +103,7 @@ $(document).ready(function () {
 
       //AJAX POST request that sends the form data to the server.
       postTweet(newTweet);
-      //clear and focus the textareax
-      $("#tweet-text").val("").focus();
+      reset();
     }
   });
 }); //close ready
