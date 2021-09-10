@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -16,6 +15,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -39,7 +39,6 @@ body {
     display: flex;
     justify-content: space-between;
   }
-
   .container {
     margin: 2em;
     top: 120px;

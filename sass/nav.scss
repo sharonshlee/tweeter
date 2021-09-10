@@ -7,27 +7,22 @@ nav {
   justify-content: space-between;
   align-items: flex-end;
   margin: auto;
-  position: fixed;
-  /* Set the navbar to fixed position */
+  position: fixed; /* Set the navbar to fixed position */
 }
-
 nav span {
   font-family: "Bungee", sans-serif;
   font-size: 1.4em;
   /* padding: 0 1.5em; */
 }
-
 nav div {
   font-size: 0.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 nav .new-tweet-label {
   font-family: "Source Sans Pro", sans-serif;
 }
-
 nav .new-icon {
   color: red;
   /* 
@@ -39,7 +34,6 @@ nav .new-icon {
   animation-iteration-count: infinite;
   transform-origin: bottom;
 }
-
 @keyframes new-icon-bounce {
   0% {
     transform: translateY(0);
@@ -51,6 +45,7 @@ nav .new-icon {
     transform: translateY(0);
   }
 }
+
 .hover-cursor {
   cursor: pointer;
 }
@@ -61,7 +56,6 @@ nav .new-icon {
   justify-content: flex-end;
   position: sticky;
 }
-
 .back-top span {
   background-color: red;
   color: white;
@@ -72,13 +66,11 @@ nav .new-icon {
   align-items: center;
   border-radius: 3em;
 }
-
 /* Tablet Styles */
 @media only screen and (min-width: 1024px) {
   nav {
     width: 100vmax;
     background-color: #4056a1;
-    z-index: 1;
-    /* Overlay */
+    z-index: 1; /* Overlay */
   }
 }

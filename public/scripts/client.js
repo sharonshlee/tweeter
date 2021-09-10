@@ -3,6 +3,27 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+//when documents are ready
+$(function () {
+  loadTweets();
+
+  $("#frm-new-tweet").submit(onSubmit);
+});
+
+const onSubmit = function (event) {
+  //prevent the default behaviour of the submit event (data submission and page refresh)
+  //Single page application
+  event.preventDefault();
+
+  if (formValidation()) {
+    //Serialize the form data before posting to the server, key=value pair
+    const newTweet = $(this).serialize();
+
+    //AJAX POST request that sends the form data to the server.
+    postTweet(newTweet);
+    reset();
+  }
+};
 
 //prevent XXS attack, cross-site scripting with escape
 const escape = function (str) {
@@ -51,13 +72,13 @@ const renderTweets = function (tweets) {
 };
 
 const loadTweets = function () {
-  $.get("/tweets", function (data) {
+  $.get("/tweets").then((data) => {
     renderTweets(data);
   });
 };
 
 const postTweet = function (newTweet) {
-  $.post("/tweets", newTweet, function () {
+  $.post("/tweets", newTweet).then(() => {
     loadTweets(); //refetch tweets on submission
   });
 };
@@ -92,22 +113,3 @@ const reset = function () {
   //reset the counter
   $(".counter").val("140");
 };
-
-$(document).ready(function () {
-  loadTweets();
-
-  $("#frm-new-tweet").submit(function (event) {
-    //prevent the default behaviour of the submit event (data submission and page refresh)
-    //Single page application
-    event.preventDefault();
-
-    if (formValidation()) {
-      //Serialize the form data before posting to the server, key=value pair
-      const newTweet = $(this).serialize();
-
-      //AJAX POST request that sends the form data to the server.
-      postTweet(newTweet);
-      reset();
-    }
-  });
-}); //close ready

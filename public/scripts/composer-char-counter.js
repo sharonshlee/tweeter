@@ -1,15 +1,21 @@
-$(document).ready(function () {
-  //keydown will not detect the first letter entered
-  $("#tweet-text").on("keyup", function () {
-    // .next() to get next element relative to #tweet-text element,
-    // use .find("output") to get the output element from next element
-    const counter = $(this).next().find("output");
-    const textCounter = 140 - $(this).val().length;
-    $(counter).val(textCounter);
-    if (textCounter < 0) {
-      $(counter).css("color", "red");
-    } else {
-      $(counter).css("color", "");
-    }
-  });
+//latest way to write document.ready
+$(function () {
+  $("#tweet-text").on("input", onChange);
 });
+
+const onChange = function () {
+  //find the nearest parent and descendent
+  const form = $(this).closest("form");
+  const counter = form.find("output");
+
+  const textLength = 140 - $(this).val().length;
+
+  $(counter).val(textLength);
+
+  if (textLength < 0) {
+    $(counter).css("color", "red");
+    return;
+  }
+
+  $(counter).css("color", "");
+};

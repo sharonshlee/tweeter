@@ -1,0 +1,50 @@
+.new-tweet textarea,
+textarea:focus {
+  border: none;
+  background: none;
+  border-bottom: solid;
+  width: 100%;
+  height: 2.5em;
+  font-size: 0.8em;
+  margin-top: 2em;
+  outline: none;
+}
+
+.error-message {
+  border: solid 4px red;
+  padding: 0.5em 1em;
+  display: none;
+}
+
+.fa-exclamation-triangle {
+  color: red;
+}
+
+.message {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: normal;
+}
+
+.new-tweet textarea::placeholder {
+  font-weight: 600;
+}
+
+.new-tweet button {
+  background-color: #4056a1;
+  color: white;
+  border: solid 1px #4056a1;
+  border-radius: 3px;
+}
+
+.new-tweet button,
+output {
+  font-family: "Bungee", sans-serif;
+  font-size: 0.7em;
+  padding: 0.2em 0.5em;
+}
+
+.tweet-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}

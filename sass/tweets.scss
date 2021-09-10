@@ -10,7 +10,6 @@
 .tweet:hover {
   box-shadow: 7px 7px 2px #b2bfe7;
 }
-
 /* ------------------------------------- */
 /* TWEET HEADER */
 .tweet header {
@@ -44,8 +43,8 @@
   color: #ccc;
   font-weight: bold;
 }
-
 /* END HEADER */
+
 /* ------------------------------------- */
 /* TWEET MAIN */
 .tweet main {
@@ -54,8 +53,8 @@
   display: flex;
   flex-grow: 2;
 }
-
 /* END MAIN */
+
 /* ------------------------------------- */
 /* TWEET FOOTER */
 .tweet footer {
@@ -81,5 +80,4 @@
 .love-icon:hover {
   color: #d1a30a;
 }
-
 /* END FOOTER */
